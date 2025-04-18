@@ -36,11 +36,11 @@ public class PayCalc {
 
         String payRoll = """
                 +---------------------------------------+
-                | Hello, %s!\t\t\t\t\t\t\t|
-                | Worked %.0f hours at $%.2f per hour.\t|
-                | %s\t\t|
+                    Hello, %s!
+                    Worked %.0f hours at $%.2f per hour.
+                    %s
                 +---------------------------------------+
-                | Your gross pay is $%.2f\t\t\t|
+                    Your gross pay is $%.2f
                 +---------------------------------------+
             """.formatted(name, hoursWorked, payRate, checkOT, payGross);
         System.out.println(payRoll);
