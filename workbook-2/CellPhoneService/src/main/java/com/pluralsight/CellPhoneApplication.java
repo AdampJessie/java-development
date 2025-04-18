@@ -9,12 +9,12 @@ public class CellPhoneApplication {
 
 
         CellPhone phone1 = new CellPhone(); // Creating a new CellPhone class object.
-        StringBuilder phoneInfo = new StringBuilder("+-------------------------------------------------+"); // Creates a StringBuilder for final output display.
+        StringBuilder phoneInfo = new StringBuilder("+-------------------------------------------------+"); // Creates a StringBuilder for final output display and separator for format.
 
         System.out.print("What is the serial number? "); // Prompts user for information
-        phone1.setSerialNumber(phoneInput.nextInt()); // Assigns user submitted information to class object.
+        phone1.setSerialNumber(phoneInput.nextInt()); // Assigns user submitted information to class object
         phoneInfo.append(String.format("\nSerial Number: %d \n", phone1.getSerialNumber())); // Adds user information to String Builder
-        phoneInput.nextLine();
+        phoneInput.nextLine(); // Consumes new line
 
         System.out.print("What model is the phone? ");
         phone1.setModel(phoneInput.nextLine());
@@ -33,7 +33,8 @@ public class CellPhoneApplication {
         phoneInfo.append(String.format("Owner: %s \n", phone1.getOwner()));
         phoneInfo.append("+-------------------------------------------------+\n");
 
-        System.out.println(phoneInfo);
+        phoneInput.close(); // Closes scanner.
+        System.out.println(phoneInfo); // Print formatted finalized completed string.
 
 
     }
