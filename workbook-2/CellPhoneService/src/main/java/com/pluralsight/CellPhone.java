@@ -2,6 +2,14 @@ package com.pluralsight;
 
 public class CellPhone {
 
+    public CellPhone() {
+        this.model = "";
+        this.carrier = "";
+        this.owner = "";
+        this.serialNumber = 0;
+        this.phoneNumber = "";
+    }
+
     private String model = "" , carrier = "" , phoneNumber = "" , owner = "";
     private int serialNumber = 0;
 
