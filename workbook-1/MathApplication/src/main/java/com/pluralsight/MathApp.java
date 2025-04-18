@@ -26,12 +26,11 @@ public class MathApp {
         System.out.println("Square Root:\t"+Math.sqrt(sqrtTarget));
 
         // Question 5:
+        // Distance Formula (Drawn Out) (Result: 89.44271909999159)
         int x1 = 5,y1 = 10 , x2 = 85,y2 = 50;
-
-        // Distance Formula (Drawn Out)
         System.out.println("Distance Between Points (Formula):\t\t"+Math.sqrt((Math.pow(x2-x1, 2)) + Math.pow(y2-y1, 2)));
 
-        // Math.hypot (Quick/Easy)
+        // Math.hypot (Quick/Easy) (Result: 89.44271909999159)
         int x3 = 5, y3 = 10, x4 = 85, y4 = 50;
         System.out.println("Distance Between Points (Hypotenuse):\t" + Math.hypot(x3 - x4, y3 - y4));
 
