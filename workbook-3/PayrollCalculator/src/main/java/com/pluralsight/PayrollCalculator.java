@@ -10,8 +10,9 @@ public class PayrollCalculator {
 
     public static void main(String[] args) {
 
+        String fileName = "employees.csv";
         try {
-            BufferedReader bufReader = new BufferedReader(new FileReader("employees.csv"));
+            BufferedReader bufReader = new BufferedReader(new FileReader(fileName));
 
             String line;
             while ((line = bufReader.readLine()) != null) {
@@ -19,10 +20,10 @@ public class PayrollCalculator {
                 String[] employeeArray = line.split("[|]+");
 
                 int fileID = Integer.parseInt(employeeArray[0]); // Defining each attribute, pulling from the array
-                String fileName = employeeArray[1];
+                String fileEmployeeName = employeeArray[1];
                 double fileHoursWorked = Double.parseDouble(employeeArray[2]);
                 double filePayRate = Double.parseDouble(employeeArray[3]);
-                Employee employee = new Employee(fileID, fileName,fileHoursWorked, filePayRate);
+                Employee employee = new Employee(fileID, fileEmployeeName,fileHoursWorked, filePayRate);
 
                 System.out.printf("Employee ID: %d\nName: %s\nHours Worked: %.2f\nPay Rate: %.2f\nGross Pay: %.2f\n" // Prints formatted message
                     , employee.getEmployeeID(), employee.getName(), employee.getHoursWorked(), employee.getPayRate(), employee.getGrossPay());
