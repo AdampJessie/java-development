@@ -26,8 +26,10 @@ public class PayrollCalculator {
 
                 System.out.printf("Employee ID: %d\nName: %s\nHours Worked: %.2f\nPay Rate: %.2f\nGross Pay: %.2f\n" // Prints formatted message
                     , employee.getEmployeeID(), employee.getName(), employee.getHoursWorked(), employee.getPayRate(), employee.getGrossPay());
-                System.out.println("============================================");
+                System.out.println("============================");
             }
+            bufReader.close();
+
         } catch (FileNotFoundException e) {
             System.err.println("Wrong file name!");
             throw new RuntimeException(e);
