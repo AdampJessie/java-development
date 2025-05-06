@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+
 public class Main {
     public static void main(String[] args) {
         // Test Employee class
@@ -30,5 +31,10 @@ public class Main {
         System.out.println("Is Occupied: " + room.isOccupied());
         System.out.println("Is Dirty: " + room.isDirty());
         System.out.println("Is Available: " + room.isAvailable());
+        System.out.println("=======================================================================");
+
+        // Test Employee
+        employee.punchIn();
+        employee.punchOut();
     }
 }
