@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Vehicle extends Asset {
 
     private String makeModel;
@@ -42,7 +44,7 @@ public class Vehicle extends Asset {
         makeModel = getMakeModel();
 
         double cost = getOriginalCost();
-        int age = 2025-year;
+        int age = LocalDate.now().getYear()-year;
 
         if (age <= 3)
             cost -= (cost)*(.03*age);
