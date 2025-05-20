@@ -55,13 +55,13 @@ public class Display {
         return results;
     }
 
-    public void averageHighestLowest(List<Person> list){
+    public void averageHighestLowest(List<Person> people){
 
         double ageTotal = 0;
         int ageHighest = Integer.MIN_VALUE;
         int ageLowest = Integer.MAX_VALUE;
 
-        for (Person person : list) {
+        for (Person person : people) {
             int age = person.getAge();
             ageTotal += age;
 
@@ -69,7 +69,7 @@ public class Display {
             if (age < ageLowest) ageLowest = age;
         }
 
-        double ageAverage = ageTotal / list.size();
+        double ageAverage = ageTotal / people.size();
         System.out.printf("Average Age: %.2f\nHighest Age: %d\nLowest Age: %d\n",
                             ageAverage, ageHighest, ageLowest);
 

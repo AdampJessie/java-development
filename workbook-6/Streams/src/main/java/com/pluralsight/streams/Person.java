@@ -45,19 +45,19 @@ public class Person {
     }
 
     public static List<Person> getList(){
-        List<Person> newList = new ArrayList<>();
-        newList.add(new Person("Adam", "Jessie", 23));
-        newList.add(new Person("Judge", "Holden", 43));
-        newList.add(new Person("John", "Marston", 33));
-        newList.add(new Person("Jim", "Milton", 33));
-        newList.add(new Person("Micah", "Bell", 36));
-        newList.add(new Person("Javier", "Escuella", 31));
-        newList.add(new Person("Bill", "Williamson", 42));
-        newList.add(new Person("James", "Brown", 67));
-        newList.add(new Person("Terrence", "Fletcher", 53));
-        newList.add(new Person("Andrew", "Neyman", 21));
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Adam", "Jessie", 23));
+        people.add(new Person("Judge", "Holden", 43));
+        people.add(new Person("John", "Marston", 33));
+        people.add(new Person("Jim", "Milton", 33));
+        people.add(new Person("Micah", "Bell", 36));
+        people.add(new Person("Javier", "Escuella", 31));
+        people.add(new Person("Bill", "Williamson", 42));
+        people.add(new Person("James", "Brown", 67));
+        people.add(new Person("Terrence", "Fletcher", 53));
+        people.add(new Person("Andrew", "Neyman", 21));
 
-        return newList;
+        return people;
     }
 
 }
