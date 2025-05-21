@@ -70,9 +70,8 @@ public class Display {
         }
 
         double ageAverage = ageTotal / people.size();
-        System.out.printf("Average Age: %.2f\nHighest Age: %d\nLowest Age: %d\n",
+        System.out.printf("Average Age: %.0f\nHighest Age: %d\nLowest Age: %d\n",
                             ageAverage, ageHighest, ageLowest);
-
 
     }
 
