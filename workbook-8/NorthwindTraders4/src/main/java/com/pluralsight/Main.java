@@ -17,8 +17,8 @@ public class Main {
         String password = args[1];
 
         Scanner scanner = new Scanner(System.in);
-
-        while (true) {
+        boolean selecting = true;
+        while (selecting) {
             System.out.println("What do you want to do?");
             System.out.println("1) Display all products");
             System.out.println("2) Display all customers");
@@ -31,13 +31,15 @@ public class Main {
             switch (choice) {
                 case 1:
                     displayAllProducts(username, password);
+                    selecting = false;
                     break;
                 case 2:
                     displayAllCustomers(username, password);
+                    selecting = false;
                     break;
                 case 3:
                     displayAllCategories(username, password);
-                    selectCategory(username, password);
+                    selecting = false;
                     break;
                 case 0:
                     System.out.println("Exiting...");
@@ -139,13 +141,15 @@ public class Main {
                 ResultSet results = statement.executeQuery();
 
                 while (results.next()) {
-                    String categoryID = results.getString("CategoryID");
+                    int categoryID = results.getInt("CategoryID");
                     String categoryName = results.getString("CategoryName");
 
                     System.out.println("Category ID: " + categoryID);
                     System.out.println("Category Name: " + categoryName);
                     System.out.println("-----------------------------------------");
+
                 }
+                selectCategory(username, password);
             }
 
         } catch (ClassNotFoundException | SQLException e) {
@@ -153,30 +157,57 @@ public class Main {
         }
     }
 
-    private static void selectCategory(){
+    private static void selectCategory(String username, String password) {
 
         try {
+            int searchID = 0;
+            Scanner scanner = new Scanner(System.in);
 
+            boolean selecting = true;
+            while (selecting) {
+                System.out.print("Please select a category (1-8): ");
+                searchID = Integer.parseInt(scanner.nextLine());
+
+                if (searchID >= 0 && searchID <= 8) {
+                    scanner.close();
+                    selecting = false;
+                } else {
+                    System.out.println("Invalid choice! Please try again.");
+                    System.out.println("-----------------------------------------");
+                }
+
+            }
 
             try (
+                    Connection connection = DriverManager.getConnection(
+                            "jdbc:mysql://localhost:3306/northwind", username, password);
+                    PreparedStatement statement = connection.prepareStatement(
+                            "SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM products " +
+                                    "WHERE CategoryID =" + searchID
+                    )
 
+            ) {
 
+                ResultSet results = statement.executeQuery();
 
+                while (results.next()) {
+                    int productId = results.getInt("ProductID");
+                    String productName = results.getString("ProductName");
+                    double unitPrice = results.getDouble("UnitPrice");
+                    int unitsInStock = results.getInt("UnitsInStock");
 
-
-
-
-
-
+                    System.out.println("Product ID: " + productId);
+                    System.out.println("Product Name: " + productName);
+                    System.out.println("Unit Price: " + unitPrice);
+                    System.out.println("Units In Stock: " + unitsInStock);
+                    System.out.println("-----------------------------------------");
+                }
+            }
 
         } catch (Exception e) {
-            System.out.println("Something went wrong!\n" + e);;
+            System.out.println("Something went wrong!\n" + e);
         }
 
-
-
-
     }
-
 }
 
