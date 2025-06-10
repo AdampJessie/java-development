@@ -40,13 +40,8 @@ public class Main {
                     break;
 
             }
-
-
         }
-
-
     }
-
 
     public static void searchData(String username, String password, boolean isProduct) {
         ResultSet results = null;
@@ -106,7 +101,6 @@ public class Main {
                     System.out.println("==============================================");
                 }
             }
-
 
         } catch (Exception ex) {
             System.out.println("Error!\n" + ex);
