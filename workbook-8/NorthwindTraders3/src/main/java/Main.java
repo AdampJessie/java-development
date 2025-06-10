@@ -72,6 +72,7 @@ public class Main {
             } else query = """
                     SELECT ContactName, CompanyName, City, Country, Phone
                     FROM customers
+                    ORDER BY Country
                     """;
 
             preparedStatement = connection.prepareStatement(query);
