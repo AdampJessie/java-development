@@ -34,9 +34,9 @@ public class Main {
 
             while (results.next()) {
 
-                String productID = results.getString("ProductID");
+                int productID = results.getInt("ProductID");
                 String productName = results.getString("ProductName");
-                String unitPrice = results.getString("UnitPrice");
+                double unitPrice = results.getDouble("UnitPrice");
                 String unitsInStock = results.getString("UnitsInStock");
 
                 System.out.println("Product ID: " + productID);
