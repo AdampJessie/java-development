@@ -31,12 +31,8 @@ public class Main {
             dataManager.insertRecord(newName, newPhone);
 
             //Display added shippers
-            List<Shipper> shippers = dataManager.queryAll();
-            System.out.println("Shippers: ");
-            shippers.forEach(shipper -> {
-                System.out.println(shipper + "\n");
-                System.out.println("-".repeat(30));
-            });
+            displayQuery(dataManager);
+
 
             System.out.println("Please enter the ID of a shipper you'd like to update:");
             int updateID = Integer.parseInt(scanner.nextLine());
@@ -46,12 +42,7 @@ public class Main {
             dataManager.updateRecord(updatePhone, updateID);
 
             //Display updated shippers
-            shippers = dataManager.queryAll();
-            System.out.println("Shippers: ");
-            shippers.forEach(shipper -> {
-                System.out.println(shipper + "\n");
-                System.out.println("-".repeat(30));
-            });
+            displayQuery(dataManager);
 
             System.out.println("Please enter the ID of a shipper you'd like to delete:");
             int deleteID = Integer.parseInt(scanner.nextLine());
@@ -59,13 +50,7 @@ public class Main {
             dataManager.deleteRecord(deleteID);
 
             //Display (deleted) shippers
-            shippers = dataManager.queryAll();
-            System.out.println("Shippers: ");
-            shippers.forEach(shipper -> {
-                System.out.println(shipper + "\n");
-                System.out.println("-".repeat(30));
-            });
-
+            displayQuery(dataManager);
 
 
         }
@@ -81,4 +66,18 @@ public class Main {
 
         return dataSource;
     }
+
+    private static void displayQuery(DataManager dataManager){
+
+        List<Shipper> shippers = dataManager.queryAll();
+        System.out.println("Shippers: ");
+        shippers.forEach(shipper -> {
+            System.out.println(shipper + "\n");
+            System.out.println("-".repeat(30));
+        });
+
+    }
+
+
+
 }
