@@ -26,12 +26,9 @@ public class Main {
             lastName = inputName[1];
             searchFilms(dataSource, firstName, lastName);
 
-
         } catch (SQLException e) {
             System.out.println("Something went wrong!\n" + e);
         }
-
-
     }
 
     private static BasicDataSource connectData(String username, String password) {
@@ -67,7 +64,6 @@ public class Main {
         } catch (Exception ex) {
             System.out.println("Something went wrong!\n"+ ex);
         }
-
     }
 
     private static void searchFilms(BasicDataSource dataSource, String firstName, String lastName) {
@@ -92,12 +88,7 @@ public class Main {
                 }
             }
         } catch (Exception ex) {
-            System.out.println("An error has occured!");
-            ex.printStackTrace();
+            System.out.println("Something went wrong!\n"+ ex);
         }
-
-
     }
-
-
 }
