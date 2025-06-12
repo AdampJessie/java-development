@@ -10,15 +10,20 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        DataSource dataSource = connectData(args[0], args[1]);
-        DataManager dataManager = new DataManager(dataSource);
+        DataManager dataManager = null;
+        try {
+            DataSource dataSource = connectData(args[0], args[1]);
+            dataManager = new DataManager(dataSource);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         try (Scanner scanner = new Scanner(System.in))
         {
             System.out.println("Please enter a last name to search for:");
             String searchLastName = scanner.nextLine();
             List<Actor> actors = dataManager.searchActors(searchLastName);
-            
+
             System.out.println("-".repeat(30));
             System.out.println("Actors: ");
             System.out.println("-".repeat(30));

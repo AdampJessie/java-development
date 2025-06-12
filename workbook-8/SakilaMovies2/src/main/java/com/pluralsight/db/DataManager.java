@@ -2,14 +2,12 @@ package com.pluralsight.db;
 
 import com.pluralsight.Actor;
 import com.pluralsight.Film;
-import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class DataManager {
