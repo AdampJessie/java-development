@@ -33,7 +33,6 @@ public class Main {
             //Display added shippers
             displayQuery(dataManager);
 
-
             System.out.println("Please enter the ID of a shipper you'd like to update:");
             int updateID = Integer.parseInt(scanner.nextLine());
             System.out.println("Please enter new phone number of the shipper you'd like to update:");
@@ -51,10 +50,7 @@ public class Main {
 
             //Display (deleted) shippers
             displayQuery(dataManager);
-
-
         }
-
     }
 
     private static BasicDataSource connectData(String username, String password) {
@@ -75,9 +71,5 @@ public class Main {
             System.out.println(shipper + "\n");
             System.out.println("-".repeat(30));
         });
-
     }
-
-
-
 }

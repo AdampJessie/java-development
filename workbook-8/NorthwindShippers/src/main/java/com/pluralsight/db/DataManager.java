@@ -51,9 +51,7 @@ public class DataManager {
             preparedStatement.setString(1, companyName);
             preparedStatement.setString(2, phoneNumber);
 
-
             int rows = preparedStatement.executeUpdate();
-
             System.out.println("Rows Inserted: " + rows);
 
             try (ResultSet keys = preparedStatement.getGeneratedKeys()) {

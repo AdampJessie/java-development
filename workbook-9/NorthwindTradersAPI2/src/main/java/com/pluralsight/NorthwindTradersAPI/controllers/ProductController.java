@@ -1,6 +1,6 @@
-package com.pluralsight.NorthwindTradersAPI.Controller;
+package com.pluralsight.NorthwindTradersAPI.controllers;
 
-import com.pluralsight.NorthwindTradersAPI.Model.Product;
+import com.pluralsight.NorthwindTradersAPI.model.Product;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +22,7 @@ import java.util.List;
         }
 
         @RequestMapping(path = "/products", method = RequestMethod.GET)
-        public List<Product> getAllCategories() {
+        public List<Product> getAllProducts() {
             return products;
         }
 

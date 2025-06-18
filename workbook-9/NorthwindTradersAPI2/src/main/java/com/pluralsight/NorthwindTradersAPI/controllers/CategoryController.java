@@ -1,6 +1,6 @@
-package com.pluralsight.NorthwindTradersAPI.Controller;
+package com.pluralsight.NorthwindTradersAPI.controllers;
 
-import com.pluralsight.NorthwindTradersAPI.Model.Category;
+import com.pluralsight.NorthwindTradersAPI.model.Category;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

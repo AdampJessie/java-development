@@ -1,4 +1,4 @@
-package com.pluralsight.NorthwindTradersAPI.Model;
+package com.pluralsight.NorthwindTradersAPI.model;
 
 public class Product {
 

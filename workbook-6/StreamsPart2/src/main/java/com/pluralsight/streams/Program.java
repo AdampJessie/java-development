@@ -54,10 +54,10 @@ public class Program {
     }
 
     private static int calculateAverageAge(List<Person> people) {
-        return (int) people.stream()
+        return (int) Math.round(people.stream()
                 .mapToInt(Person::getAge)
                 .average()
-                .orElse(0);
+                .orElse(0));
     }
 
     private static int findOldestAge(List<Person> people) {
